@@ -14,8 +14,7 @@
     <!-- Подключен файл со стандартными стилями бустрап -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>
-        {%block title%}
-        {% endblock %}
+        {{title}}
     </title>
   </head>
   <body>
@@ -25,8 +24,7 @@
     <main>
       <!-- класс py-5 создает отступы сверху и снизу блока -->
       <div class="container py-5">
-        {%block content%}
-        {% endblock %}
+        {{content}}
       </div>  
     </main>
     <!-- Использованы классы бустрапа: -->

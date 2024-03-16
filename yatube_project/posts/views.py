@@ -3,6 +3,20 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, "posts/index.html")
+    template = 'base.html'
+    title = 'Главная страница'
+    content = 'Это главная страница проекта Yatube'
+    context= {
+        'title': title,
+        'content': content
+    }
+    return render(request, template, context)
 def group_posts(request, slug):
-    return render(request, "posts/group_list.html")
+    template = 'base.html'
+    title = 'Записи групп'
+    content = 'Здесь будет информация о группах проекта Yatube'
+    context= {
+        'title': title,
+        'content': content
+    }
+    return render(request, template, context)
