@@ -13,7 +13,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>
-        {{title}}
+        Последние обновления на сайте
     </title>
     <link rel="stylesheet" href={% static 'bootstrap/dist/css/bootstrap.min.css'%}>
     <script src="{% static 'jquery/dist/jquery.min.js' %}"> </script>
@@ -26,7 +26,9 @@
     <main>
       <!-- класс py-5 создает отступы сверху и снизу блока -->
       <div class="container py-5">
-        {{content}}
+        <h1>Последние посты на сайте</h1>
+        {% block content %}
+        {% endblock %}
       </div>  
     </main>
     <!-- Использованы классы бустрапа: -->
