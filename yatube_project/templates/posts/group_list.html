@@ -5,14 +5,13 @@
 <article>
     <ul>
         <li>
-            Автор: {{ post.author.get_full_name }}
+            Автор: {{ post.author.get_username }}
         </li>
         <li>
             Дата публикации: {{ post.pub_date|date:"d E Y" }}
         </li>
     </ul>
     <p>{{ post.text }} </p>
-    <a href="">все записи группы </a>
 </article>
 <hr>
 </hr>

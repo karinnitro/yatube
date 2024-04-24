@@ -3,14 +3,14 @@
 {% for post in posts %}
 <ul>
     <li>
-        Автор: {{ post.author.get_full_name }}
+        Автор: {{ post.author.get_username }}
     </li>
     <li>
         Дата публикации: {{ post.pub_date|date:"d E Y" }}
     </li>
 </ul>
 <p>{{ post.text }} </p>
-<a href="">все записи группы </a>
+{% if not post.group == null %}<a href="{% url 'posts:group_posts' post.group.slug %}">Все записи группы </a>{% endif %}
 {% if not forloop.last %}<hr>{% endif %}
 {% endfor %}
 {% endblock %}
