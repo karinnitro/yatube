@@ -2,6 +2,7 @@
 {%block title%}{{title}}{%endblock%}
 {%block title_h1%}{{title}}{%endblock%}
 {% block content %}
+{% if user.is_authenticated %}
 {% for post in posts %}
 <ul>
     <li>
@@ -15,4 +16,7 @@
 {% if not post.group == null %}<a href="{% url 'posts:group_list' post.group.slug %}">Все записи группы </a>{% endif %}
 {% if not forloop.last %}<hr>{% endif %}
 {% endfor %}
+{% else %}
+{{'Вы не авторизованы'}}
+{% endif %}
 {% endblock %}
