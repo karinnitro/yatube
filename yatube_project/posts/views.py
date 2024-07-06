@@ -1,8 +1,14 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from .models import Group, Post
+from django.shortcuts import redirect
 
-
+def authorized_only(func):
+    def check_user(request, *args, kwargs):
+        if request.user.is_authenticated:
+            return func(request, *args, *kwargs)
+        return redirect('/auth/login/')
+    return check_user
 
 
 def index(request):
